@@ -1,0 +1,25 @@
+Text Input
+    FirstName
+    Username
+
+Radio
+    Rent or Own
+    Commute or Work From Home
+
+Checkboxes
+    Own which of the following
+        PC
+        Phone
+        Gaming Console
+        Laptop
+
+Password
+    Input Password
+
+Describe yourself
+    Insert Text
+
+Dropdown
+    Preferred method of transport (Car, bike, bus)
+
+Submit

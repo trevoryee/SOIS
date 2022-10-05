@@ -1,0 +1,56 @@
+body{
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+
+.assignments{
+    font-family: verdana;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    padding: 10px;
+}
+
+.assignments tr{
+  background-color: #ffffff;
+}
+.assignmentsheader:hover{
+  background-color: #ffffff;
+}
+.assignmentsrows:hover{
+  background-color: #99fff1;
+}
+
+.calendar{
+  font-family: verdana;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 20px;
+}
+.calendar tr:hover{
+  background-color: #ffffff;
+}
+
+.calendarbday{
+  background-color: #1eff00;
+}
+
+.svg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.jpg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 10px;
+}

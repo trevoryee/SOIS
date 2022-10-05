@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<!-- TY-09-12-2022-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Trevor Yee's Website">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="yeet@uwm.edu">
+        <link rel="stylesheet" href="forms.css">
+        <link rel="stylesheet" href="../index.css">
+        <title> 
+        yeet@uwm.edu's Website
+        </title>
+       
+    </head>
+    <body>
+        <div class="bg-image"> </div>
+
+        <div class='header'>
+        <h1>yeet@uwm.edu's Website</h1>
+        </div>
+
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="../forms/index.html">Forms</a>
+            <a href="../layout/index.html">Layout</a>
+            <a href="../resume/index.html">Resume</a>
+            <a href="../tables/index.html">Tables</a>
+        </div>
+
+        <hr>
+
+        <div class="forms">
+            <fieldset class="fnameuname">
+            <form action="/action_page.php" method="get">
+                Please type your first name and username.<br><br>
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" required><br><br>
+                <label for="lname">Username: </label>
+                <input type="text" id="username" name="username" required><br><br>
+            
+            </fieldset>
+
+            <fieldset class="rentorown">
+                <form action="/action_page.php" method="get">
+                Do you rent or own your residence?<br><br>
+                <input type="radio" id="rent" name="rentorown" value="rent">
+                <label for="Rent">Rent</label>
+                <input type="radio" id="own" name="rentorown" value="own">
+                <label for="Own">Own</label>
+            
+            </fieldset>
+
+            <fieldset class="work">
+            <form action="action_page.php" method="get">
+                Do you commute or work from home?<br><br>
+                <input type="radio" id="commute" name="work"value="commute">
+                <label for="commute">Commute to work</label>
+                <input type="radio" id="WFH" name="work" value="WFH">
+                <label for="WFH">Work from home</label>
+            
+            </fieldset>
+            <fieldset class="owneddevices">
+            <form action="/action_page.php" method="get">
+                Which of these devices do you own?<br><br>
+                <input type="checkbox" id="PC" name="PC">
+                <label for="PC">PC</label>
+                <input type="checkbox" id="Laptop" name="Laptop">
+                <label for="Laptop">Laptop</label>
+                <input type="checkbox" id="Game Console" name="Game Console">
+                <label for="Game Console">Game Console</label>
+                <input type="checkbox" id="phone" name="phone">
+                <label for="phone">Phone</label>
+            
+            </fieldset>
+            <fieldset class="password">
+                <form action="/action_page.php" method="post">
+                    Please set a password. (Minimum length of 5, Maximum length of 15) <br><br>
+                    <input type="password" id="password" name="password" minlength="5" maxlength="15" required>
+                
+            </fieldset>
+            <fieldset class="description">
+                <form action="/action_page.php" method="get">
+                    Please write something about yourself here. (1-5 sentences)<br><br>
+                    <textarea id="description" name="description" rows="20" cols="100"></textarea>
+                
+            </fieldset>
+            <fieldset class="transport">
+                <form action="/action_page.php" method="get">
+                    Please select your preferred method of transportation.<br><br>
+                    <label for="transport">Choose a method:</label>
+                    <select id="transport" name="transport" required>
+                        <option value=></option>
+                        <option value="Car">Car</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Bike">Bike</option>
+                        <option value="Walk">Walk</option>
+                    </select>
+                
+            </fieldset>
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <hr>
+
+    </body>
+</html>

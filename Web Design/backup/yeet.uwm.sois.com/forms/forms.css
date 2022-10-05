@@ -1,0 +1,45 @@
+body{
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+
+.fnameuname{
+font-family: verdana;
+  font-size: 20px;
+}
+
+.rentorown{
+font-family: verdana;
+  font-size: 20px;
+}
+
+.work{
+font-family: verdana;
+  font-size: 20px;
+}
+
+.owneddevices{
+font-family: verdana;
+font-size: 20px;
+}
+
+.password{
+font-family: verdana;
+font-size: 20px;
+}
+
+.description{
+font-family: verdana;
+font-size: 20px;
+}
+
+.transport{
+font-family: verdana;
+font-size: 20px;
+}
+
+.submit{
+font-family: verdana;
+font-size: 20px;
+}

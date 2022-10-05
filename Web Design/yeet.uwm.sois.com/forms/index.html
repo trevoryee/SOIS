@@ -8,6 +8,7 @@
         <meta name="description" content="Trevor Yee's Website">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="yeet@uwm.edu">
+        <link rel="stylesheet" href="/forms.css">
         <link rel="stylesheet" href="../index.css">
         <title> 
         yeet@uwm.edu's Website
@@ -31,10 +32,84 @@
 
         <hr>
 
-        <div class="main_text">
-        <p>Placeholder for forms</p>
+        <div class="forms">
+            <fieldset class="fnameuname">
+            <form action="/forms/action_page.php" method="POST">
+                Please type your first name and username.<br><br>
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" required><br><br>
+                <label for="lname">Username: </label>
+                <input type="text" id="username" name="username" required><br><br>
+            
+            </fieldset>
+
+            <fieldset class="rentorown">
+                <form action="/forms/action_page.php" method="POST">
+                Do you rent or own your residence?<br><br>
+                <input type="radio" id="rent" name="rentorown" value="Rent">
+                <label for="Rent">Rent</label>
+                <input type="radio" id="own" name="rentorown" value="Own">
+                <label for="Own">Own</label>
+            
+            </fieldset>
+
+            <fieldset class="work">
+            <form action="action_page.php" method="POST">
+                Do you commute or work from home?<br><br>
+                <input type="radio" id="commute" name="work"value="commute">
+                <label for="commute">Commute to work</label>
+                <input type="radio" id="WFH" name="work" value="WFH">
+                <label for="WFH">Work from home</label>
+            
+            </fieldset>
+            <fieldset class="owneddevices">
+            <form action="/forms/action_page.php" method="POST">
+                Which of these devices do you own?<br><br>
+                <input type="checkbox" id="PC" name="PC" value="PC">
+                <label for="PC">PC</label>
+                <input type="checkbox" id="Laptop" name="Laptop" value="Laptop">
+                <label for="Laptop">Laptop</label>
+                <input type="checkbox" id="Console" name="Console" value="Console">
+                <label for="Game Console">Game Console</label>
+                <input type="checkbox" id="phone" name="phone" value="Phone">
+                <label for="phone">Phone</label>
+            
+            </fieldset>
+            <fieldset class="password">
+                <form action="/forms/action_page.php" method="POST">
+                    Please set a password. (Minimum length of 5, Maximum length of 15) <br><br>
+                    <input type="password" id="password" name="password" minlength="5" maxlength="15" required>
+                
+            </fieldset>
+            <fieldset class="description">
+                <form action="/forms/action_page.php" method="POST">
+                    Please write something about yourself here. (1-5 sentences)<br><br>
+                    <textarea id="description" name="description" rows="20" cols="100"></textarea>
+                
+            </fieldset>
+            <fieldset class="transport">
+                <form action="/forms/action_page.php" method="POST">
+                    Please select your preferred method of transportation.<br><br>
+                    <label for="transport">Choose a method:</label>
+                    <select id="transport" name="transport" required>
+                        <option value=></option>
+                        <option value="Car">Car</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Bike">Bike</option>
+                        <option value="Walk">Walk</option>
+                    </select>
+                
+            </fieldset>
+            <input type="submit" value="Submit">
+            </form>
         </div>
         
+        <br><br>
+
+        <div class="image">
+            WIREFRAME IMAGE <br>
+            <img src="../images/wireframe.png" alt="There is supposed to be a PNG here">
+        </div>
         <hr>
 
     </body>
