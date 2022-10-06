@@ -1,5 +1,5 @@
 #h04_used_cars.py
-#Prints info about each car
+#The basic version of printing cars.
 #Trevor Yee 10/5/2022
 subaru_impreza= {
 'owner_lname':'wong',

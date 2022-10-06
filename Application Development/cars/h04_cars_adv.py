@@ -1,5 +1,5 @@
 #h04_cars_adv.py
-#A more complicated version of used_cars.py
+#This version of cars imports the list and prints both used and new cars without user input.
 #Trevor Yee 10/5/2022
 
 from cars import *
