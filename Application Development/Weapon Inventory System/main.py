@@ -28,20 +28,36 @@ def list_table():
 
 list_table()
 
-#mfr =  input("Please input the weapon manufacturer: ")
-#model= input("Please input the model of the weapon: ")
-#sn= input("Please input the serial number of the weapon: ")
+def inputs():
+    global mfr
+    global model
+    global sn
+    mfr =  input("Please input the weapon manufacturer: ")
+    model= input("Please input the model of the weapon: ")
+    sn= input("Please input the serial number of the weapon: ")
+    print(mfr, model, sn)
 
-def insert_mfr():
-    cursor.execute("""INSERT INTO 'weapons' VALUES 
-    ('Sig','M18','ABC')
-""")
+
+def insert_db():
+    cursor.execute("INSERT INTO 'weapons' VALUES (?,?,?)", (mfr, model, sn))
     con.commit()
 
-insert_mfr()
+inputs()
 
-def fetch_mfr():
-    result= cursor.execute("SELECT mfr FROM weapons")
+infoconfirm= input("Is this correct? (Y/N inputs only): ")
+while infoconfirm.casefold() == 'n':
+    inputs()
+    infoconfirm= input("Is this correct? (Y/N inputs only): ")
+    
+    if infoconfirm.casefold() == 'y':
+        insert_db()
+
+
+def fetch_info():
+    result= cursor.execute("SELECT * FROM weapons")
     print(result.fetchall())
 
-fetch_mfr()
+
+fetch_info()
+
+con.close()
