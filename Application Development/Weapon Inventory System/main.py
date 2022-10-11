@@ -28,17 +28,20 @@ def list_table():
 
 list_table()
 
-mfr =  input("Please input the weapon manufacturer: ")
-model= input("Please input the model of the weapon: ")
-sn= input("Please input the serial number of the weapon: ")
+#mfr =  input("Please input the weapon manufacturer: ")
+#model= input("Please input the model of the weapon: ")
+#sn= input("Please input the serial number of the weapon: ")
 
 def insert_mfr():
-    cursor.execute("""
-    INSERT INTO weapons (mfr, model, sn)
-    VALUES
-    (x, y, z)
-    
+    cursor.execute("""INSERT INTO 'weapons' VALUES 
+    ('Sig','M18','ABC')
 """)
+    con.commit()
 
 insert_mfr()
 
+def fetch_mfr():
+    result= cursor.execute("SELECT mfr FROM weapons")
+    print(result.fetchall())
+
+fetch_mfr()
