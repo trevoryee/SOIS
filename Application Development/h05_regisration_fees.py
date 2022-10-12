@@ -27,6 +27,7 @@ def calc():
 
 vehinfo()
 checkinfo()
+
 while isnumber == 0:
     print("You entered invalid information.")
     vehinfo()
