@@ -13,7 +13,7 @@ def create_table():
         cursor.execute("CREATE TABLE weapons(mfr,model,sn)")
         print("Table 'Weapons' created")
     except Error as e:
-        print(e)
+        print("Table 'weapons' exists")
 
 def list_table():
     result= cursor.execute("SELECT name FROM sqlite_master")
@@ -26,7 +26,7 @@ def inputs():
     mfr =  input("Please input the weapon manufacturer: ")
     model= input("Please input the model of the weapon: ")
     sn= input("Please input the serial number of the weapon: ")
-    print(mfr, model, sn)
+    print('Manufacturer: ', mfr,'Model: ', model,'Serial Number: ', sn)
 
 def insert_db():
     cursor.execute("INSERT INTO 'weapons' VALUES (?,?,?)", (mfr, model, sn))
@@ -47,7 +47,7 @@ def fetch_rowids():
         print("Total rows are:  ", len(records))
         print("Printing each row")
         for row in records:
-            print("ID: ", row[0])
+            #print("ID: ", row[0])
             print("MFR: ", row[0])
             print("Model: ", row[1])
             print("SN: ", row[2])
@@ -67,7 +67,7 @@ def delete_info_input():
     
 
 def delete_info():
-    sqliteConnection = sqlite3.connect('weapons')
+    sqliteConnection = sqlite3.connect('weapondb')
     cursor.execute("""DELETE FROM weapons WHERE rowid=?""",(delete_input))
     con.commit()
     
