@@ -35,3 +35,41 @@ def insert_db():
 def fetch_info():
     result= cursor.execute("SELECT * FROM weapons")
     print(result.fetchall())
+
+def fetch_rowids():
+    try:
+        sqliteConnection = sqlite3.connect('weapondb')
+        print("Connected to SQLite")
+
+        select_query = """SELECT * from weapons"""
+        cursor.execute(select_query)
+        records = cursor.fetchall()
+        print("Total rows are:  ", len(records))
+        print("Printing each row")
+        for row in records:
+            print("ID: ", row[0])
+            print("MFR: ", row[0])
+            print("Model: ", row[1])
+            print("SN: ", row[2])
+            print("\n")
+
+    except sqlite3.Error as error:
+        print("Failed to read data from sqlite table", error)
+    finally:
+        if sqliteConnection:
+            sqliteConnection.close()
+            print("The SQLite connection is closed")
+
+def delete_info_input():
+    global delete_input
+    weapon_id= input("WeaponID: ")
+    delete_input= str(weapon_id)
+    
+
+def delete_info():
+    sqliteConnection = sqlite3.connect('weapons')
+    cursor.execute("""DELETE FROM weapons WHERE rowid=?""",(delete_input))
+    con.commit()
+    
+def closecon():
+    cursor.close()
