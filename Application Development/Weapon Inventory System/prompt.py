@@ -1,4 +1,4 @@
-#prompt.pyimport sqlite3
+#prompt.py
 
 import sqlite3
 import os.path
