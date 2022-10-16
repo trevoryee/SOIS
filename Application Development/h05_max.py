@@ -1,15 +1,19 @@
 #h05_max.py
+# A program to determine the greatest number of 3 provided numbers.
+# created by Trevor Yee, 10/13/2022
 
+isnumber= 0
 
+# This function takes input to define n1, n2 and n3.
 
 def number_def():
     global n1, n2, n3
     n1 = input('Define N1: ')
-    number_check(n1)
     n2 = input('Define N2: ')
-    number_check(n2)
     n3 = input('Define N3: ')
-    number_check(n3)
+    checknum()
+
+# This function compares the three numbers
 
 def number_compare():
     if (n1 > n2) and (n1 > n3):
@@ -23,19 +27,18 @@ def number_compare():
     else:
         print('not worky')
 
-def number_check(input):
+def checknum():
+    global isnumber
     try:
-        val= int(input)
-        print('Input',input,'is number')
+        float(n1)
+        float(n2)
+        float(n3)
+        isnumber= 1
     except ValueError:
-        try:
-            val=float(input)
-            print('Input', input,'is','float')
-        except ValueError:
-            print(input, 'Not a number')
-            print('WARNING, PROGRAM WILL NOT FUNCTION CORRECTLY IF YOU SEE THIS MESSAGE')
-        
+        print('One, or more, of the three inputs was not a number')
+        isnumber= 0
 
-
-number_def()
-number_compare()
+while isnumber == 0:
+    number_def()
+if isnumber ==1:
+    number_compare()
