@@ -1,0 +1,29 @@
+.name{
+    font-weight: 1000;
+    font-size: 30px;
+    margin-left:25px;
+  }
+
+.secheader{
+    font-weight: 850;
+    font-size: 20px;
+    margin-left:25px;
+}
+
+
+.titles{
+    font-weight: 700;
+    font-size: 16px;
+    margin-left:25px;
+}
+.location{
+    font-weight: 500;
+    font-style:italic;
+    font-size: 16px;
+    margin-left:25px;
+}
+.details{
+    font-weight: 500;
+    font-size: 16px;
+    margin-left:25px;
+}
