@@ -29,7 +29,7 @@ def calc():
         print('Hours worked: ', hours, 'hours')
         print('Overtime worked: ', int(overtime), 'hours')
         print('Total wages: $', total_wage)
-    if float_hours < 40:
+    if float_hours <= 40:
         total_wage= float_wage*40
         print('Hourly pay: $',wage,)
         print('Hours worked: ', hours, 'hours')
