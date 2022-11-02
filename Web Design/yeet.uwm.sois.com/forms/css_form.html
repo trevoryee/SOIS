@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!-- TY-09-12-2022-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Trevor Yee's Website">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="yeet@uwm.edu">
+        <link rel="stylesheet" href="css_form.css">
+        <link rel="stylesheet" href="../index.css">
+        <title> 
+        yeet@uwm.edu's Website
+        </title>
+       
+    </head>
+    <body>
+        <div class="bg-image"> </div>
+
+        <div class='header'>
+        <h1>yeet@uwm.edu's Website</h1>
+        </div>
+
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="../forms/index.html">Forms</a>
+            <a href="../layout/index.html">Layout</a>
+            <a href="../resume/index.html">Resume</a>
+            <a href="../tables/index.html">Tables</a>
+        </div>
+
+        <hr>
+
+        <div class="forms">
+            <fieldset class="textinput">
+                
+            </fieldset>
+            <fieldset class="twotexarea">
+            <form action="/forms/action_page.php" method="POST">
+                 <textarea class="textarea1" id="text1" name="description" rows="20" cols="100"></textarea>
+                 <br>
+                 <textarea class="textarea2" id="text2" name="description" rows="20" cols="100"></textarea>
+            </fieldset>
+
+            <fieldset class="radio">
+                <input type="radio" id="radio" name="option" value="1">
+                <label for="commute">Option 1</label>
+                <input type="radio" id="radio" name="option" value="2">
+                <label for="commute">Option 2</label>
+            </fieldset>
+
+            <input class="submit" type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <br><br>
+
+        <hr>
+
+    </body>
+</html>
