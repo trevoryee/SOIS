@@ -5,62 +5,92 @@ font-family: Arial;
 }
 
 .forms{
-margin:10px;
+margin:100px;
 border-style: solid;
 border-radius: 5px;
 }
 
-.textinput{
-    
+.textinput1{
+padding:auto;
+position:relative;
+height: 20px;
+width:25%;
+border-top:solid;
+border-left: solid;
+border-right: solid;
+border-radius: 5px;
 }
 
-.twotextarea{
+.textinput1:focus{
+padding:auto;
+position: relative;
+height: 20px;
+width:50%;
+transition: width 1s;
+background-color:aqua;
+border-top:solid;
+border-left: solid;
+border-right: solid;
+}
+
+.textinput2{
+padding:auto;
+position:relative;
+height: 20px;
+width:25%;
+border-top:solid;
+border-left: solid;
+border-right: solid;
+border-bottom:solid;
+border-radius: 5px;
+}
+
+.textinput2:focus{
+padding:auto;
+position: relative;
+height: 20px;
+width:50%;
+transition: width 1s;
+background-color:yellow;
+border-top:solid;
+border-left: solid;
+border-right: solid;
+border-bottom:solid;
+}
+
+.textarea{
 margin-left:auto;
 margin-right: auto;
 }
 
 .textarea1{
-padding:auto;
 position:relative;
 height: 100px;
 width:100%;
 border-top:solid;
 border-left: solid;
 border-right: solid;
+border-bottom:solid;
+border-radius: 5px;
 }
 
 .textarea1:focus{
-padding:auto;
 position: relative;
 height: 200px;
 width:100%;
 transition: height 1s;
-background-color:aqua;
+background-color:red;
 border-top:solid;
 border-left: solid;
 border-right: solid;
+border-bottom:solid;
 }
 
-.textarea2{
-position: relative;
-height: 100px;
-width:100%;
-border-left: solid;
-border-right: solid;
-border-bottom: solid;
+.dropdownmenu{
+margin-top:50px;
+font-size:23px;
+background-color:fuchsia;
 }
-
-.textarea2:focus{
-position: relative;
-height: 200px;
-width:100%;
-transition: height 1s;
-background-color:aqua;
-border-left: solid;
-border-right: solid;
-border-bottom: solid;
-}
-
 
 .submit{
 margin-top:10px;

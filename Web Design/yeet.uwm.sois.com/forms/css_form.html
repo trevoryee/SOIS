@@ -34,23 +34,40 @@
 
         <div class="forms">
             <fieldset class="textinput">
-                
+                <form action="/forms/action_page_2.php" method="POST"></form>
+                <label for="textinput1">Input 1: </label>
+                <input type="text" class="textinput1" id="textinput1" name="textinput1" required><br><br>
+                <label for="textinput2">Input 2: </label>
+                <input type="text" class="textinput2" id="textinput2" name="textinput2" required><br><br>
             </fieldset>
-            <fieldset class="twotexarea">
-            <form action="/forms/action_page.php" method="POST">
+            <fieldset class="textarea">
+            <form action="/forms/action_page_2.php" method="POST">
+                Text Area:
                  <textarea class="textarea1" id="text1" name="description" rows="20" cols="100"></textarea>
-                 <br>
-                 <textarea class="textarea2" id="text2" name="description" rows="20" cols="100"></textarea>
             </fieldset>
 
             <fieldset class="radio">
+                <form action="/forms/action_page_2.php" method="POST"></form>
                 <input type="radio" id="radio" name="option" value="1">
-                <label for="commute">Option 1</label>
+                <label for="radio">Option 1</label>
                 <input type="radio" id="radio" name="option" value="2">
-                <label for="commute">Option 2</label>
+                <label for="radio">Option 2</label>
             </fieldset>
 
-            <input class="submit" type="submit" value="Submit">
+            <fieldset class="dropdown">
+                 <form action="/forms/action_page_2.php" method="POST">
+                    Dropdown menu here.<br>
+                    <label for="transport">Choose:</label>
+                    <select class="dropdownmenu" id="transport" name="transport" required>
+                        <option value=></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+            </fieldset>
+
+            <input class="submit" type="submit" value="Enter">
             </form>
         </div>
         
