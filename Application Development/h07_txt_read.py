@@ -2,7 +2,7 @@
 
 
 fileobject= open("anna.txt", "r",encoding="utf8")
-print(fileobject)
+#print(fileobject)
 
 content= fileobject.read()
 print(content)
