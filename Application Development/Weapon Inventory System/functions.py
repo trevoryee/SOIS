@@ -56,13 +56,14 @@ def fetch_rowids():
         select_query = "SELECT * from " + x
         cursor.execute(select_query)
         records = cursor.fetchall()
+        z= cursor.execute("SELECT ROW_NUMBER() OVER(ORDER BY mfr)RowNum,mfr,model,sn FROM "+x)
         print("Total rows are:  ", len(records))
         print("Printing each row")
-        for row in records:
-            #print("ID: ", row[0])
-            print("MFR: ", row[0])
-            print("Model: ", row[1])
-            print("SN: ", row[2])
+        for row in z:
+            print("RowNum: ", row[0])
+            print("MFR: ", row[1])
+            print("Model: ", row[2])
+            print("SN: ", row[3])
             print("\n")
 
     except sqlite3.Error as error:
@@ -91,6 +92,39 @@ def deletetable():
         cursor.execute("DROP TABLE " + x)
     except Error:
         print(x+ ' does not exist')
+
+def search_table():
+    sqliteConnection = sqlite3.connect('maindb')
+    print("Connected to SQLite")
+    print(list_table())
+    activedb= input("Please type your active table: ")
+    x= activedb.casefold()
+    select_query = "SELECT * from " + x
+    cursor.execute(select_query)
+    records = cursor.fetchall()
+    z= cursor.execute("SELECT ROW_NUMBER() OVER(ORDER BY mfr)RowNum,mfr,model,sn FROM "+x)
+    print("Total rows are:  ", len(records))
+
+    def search():
+        global search_type
+        search_type= input("Input search term (mfr,model,sn): ")
+    search()
+    while search_type not in ('mfr','model','sn'):
+        print('Not valid input')
+        search()
+    else:
+        print('Search type valid')
+        
+    search_phrase= input("Input "+ search_type +": ")
+    search_result= cursor.execute("SELECT * FROM "+ activedb+ " WHERE " + search_type + " = "+ "'" + search_phrase +"'")
+    search_success=0
+    for i in search_result:
+        print(i)
+        search_success=1
+    if search_success == 0:
+        print("No results found")
+
     
+
 def closecon():
     cursor.close()

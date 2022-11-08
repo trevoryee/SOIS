@@ -17,7 +17,7 @@ else:
 
 #create_table()
 
-print("Welcome to IMS")
+print("Welcome to IMS (Inventory Management System")
 print("\n")
 print("What would you like to do?")
 print("1: View database")

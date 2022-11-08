@@ -1,0 +1,4 @@
+activedb= 'x'
+search_type='y'
+search_phrase='z'
+print("SELECT * FROM "+ activedb+ " WHERE " + search_type + " = "+ "'" + search_phrase +"'")
