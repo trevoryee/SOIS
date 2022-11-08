@@ -6,23 +6,25 @@ from sqlite3 import Error, connect
 from venv import create
 from functions import *
 
-con= sqlite3.connect("weapondb")
+con= sqlite3.connect("maindb")
 cursor= con.cursor()
 
-if os.path.isfile("weapondb") == True:
-    print("Weapondb exists: True")
+if os.path.isfile("maindb") == True:
+    print("maindb exists: True")
     print("\n")
 else:
-    print("Weapondb not found")
+    print("maindb not found")
 
-create_table()
+#create_table()
 
-print("Welcome to WIS")
+print("Welcome to IMS")
 print("\n")
 print("What would you like to do?")
 print("1: Add to database")
-print("2: View database")
+print("2: View database(s)")
 print("3: Remove from database")
+print("4: Add a new database")
+print("5: Delete an existing database")
 prompt= input("Select a number: ")
 
 if prompt == '1':
@@ -54,3 +56,9 @@ if prompt == '3':
             delete_info()
     fetch_rowids()
     con.close()
+
+if prompt == '4':
+    create_table_custom()
+
+if prompt == '5':
+    deletetable()

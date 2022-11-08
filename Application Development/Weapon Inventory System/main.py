@@ -7,14 +7,17 @@ import os.path
 from sqlite3 import Error, connect
 from functions import *
 
-con = sqlite3.connect("weapondb")
+con = sqlite3.connect("maindb")
 cursor= con.cursor()
 
-if os.path.isfile("weapondb") == True:
-    print("weapondb exists")
+if os.path.isfile("maindb") == False:
+    print("'maindb' does not exist")
+else:
+    print("maindb exists")
 
 
-create_table()
+
+create_table_custom()
 
 list_table()
 
