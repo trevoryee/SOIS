@@ -31,18 +31,19 @@ def inputs():
     global mfr
     global model
     global sn
-    mfr =  input("Please input the weapon manufacturer: ")
-    model= input("Please input the model of the weapon: ")
-    sn= input("Please input the serial number of the weapon: ")
+    global activetable
+    activetable= input('What table are you using? ')
+    mfr =  input("Please input the manufacturer: ")
+    model= input("Please input the model: ")
+    sn= input("Please input the serial number of the itme: ")
     print('Manufacturer: ', mfr,'Model: ', model,'Serial Number: ', sn)
 
 def insert_db():
-    activetable= input('What table are you using? ')
     cursor.execute("INSERT INTO " + activetable + " VALUES (?,?,?)", (mfr, model, sn))
     con.commit()
 
 def fetch_info():
-    result= cursor.execute("SELECT * FROM weapons")
+    result= cursor.execute("SELECT * FROM "+ activetable)
     print(result.fetchall())
 
 def fetch_rowids():
@@ -73,8 +74,8 @@ def fetch_rowids():
 
 def delete_info_input():
     global delete_input
-    weapon_id= input("WeaponID: ")
-    delete_input= str(weapon_id)
+    item_id= input("ID: ")
+    delete_input= str(item_id)
     
 
 def delete_info():

@@ -20,14 +20,20 @@ else:
 print("Welcome to IMS")
 print("\n")
 print("What would you like to do?")
-print("1: Add to database")
-print("2: View database(s)")
+print("1: View database")
+print("2: Add to database(s)")
 print("3: Remove from database")
 print("4: Add a new database")
 print("5: Delete an existing database")
+print("6: Search by manufacturer, model, or S/N")
 prompt= input("Select a number: ")
 
 if prompt == '1':
+    fetch_rowids()
+    con.close()
+
+if prompt == '2':
+    print(list_table())
     inputs()
     infoconfirm= input("Is this correct? (Y/N inputs only): ")
     while infoconfirm.casefold() == 'n':
@@ -38,10 +44,6 @@ if prompt == '1':
             insert_db()
     insert_db()
     fetch_info()
-    con.close()
-
-if prompt == '2':
-    fetch_rowids()
     con.close()
 
 if prompt == '3':
@@ -62,3 +64,6 @@ if prompt == '4':
 
 if prompt == '5':
     deletetable()
+
+if prompt == '6':
+    search_table()
