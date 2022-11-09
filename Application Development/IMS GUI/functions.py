@@ -1,11 +1,10 @@
 #functions.py
 
-import sqlite3
 import os.path
-from sqlite3 import Error, connect
+import sqlite3
 import tkinter as ttk
-from tkinter import *
 from sqlite3 import Error, connect
+from tkinter import *
 from venv import create
 
 con = sqlite3.connect("maindb")
@@ -158,8 +157,9 @@ def inputbox():
     textbox.mainloop()
 
 def printInput():
-	inp = inputtxt.get(1.0, "end-1c")
-	lbl.config(text = "Provided Input: "+inp)
+    global userinput
+    userinput = inputtxt.get(1.0, "end-1c")
+    lbl.config(text = "Provided Input: "+userinput)
 
 def fetch_rowids_gui():
     global textbox
@@ -197,3 +197,14 @@ def fetch_rowids_gui():
     textbox.geometry('400x300')
     ttk.Label(frm, text= a).grid(column=0,row=1)
     ttk.Button(frm, text="Quit", command=frm.destroy).grid(column=0, row=8)
+
+def inputs_gui():
+    global mfr
+    global model
+    global sn
+    global activetable
+    activetable= input('What table are you using? ')
+    mfr =  input("Please input the manufacturer: ")
+    model= input("Please input the model: ")
+    sn= input("Please input the serial number of the itme: ")
+    print('Manufacturer: ', mfr,'Model: ', model,'Serial Number: ', sn)

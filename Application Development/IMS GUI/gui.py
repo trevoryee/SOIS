@@ -1,11 +1,12 @@
 #gui.py
 
-import sqlite3
 import os.path
+import sqlite3
 import tkinter as ttk
-from tkinter import *
 from sqlite3 import Error, connect
+from tkinter import *
 from venv import create
+
 from functions import *
 
 con= sqlite3.connect("maindb")
@@ -25,7 +26,7 @@ frm.grid()
 ttk.Label(frm, text="Welcome to IMS (Inventory Management System)").grid(column=0, row=0)
 ttk.Label(frm, text= "What would you like to do?").grid(column=0,row=1)
 ttk.Button(frm, text="1: View database",command=fetch_rowids_gui).grid(column=0,row=2)
-ttk.Button(frm, text="2: Add to database(s)",command= inputbox).grid(column=0, row=3)
+ttk.Button(frm, text="2: Add to database(s)",command=lambda: [inputs_gui(), insert_db()]).grid(column=0, row=3)
 ttk.Button(frm, text="3: Remove from database",command= inputbox).grid(column=0, row=4)
 ttk.Button(frm, text="4: Add a new database",command= inputbox).grid(column=0, row=5)
 ttk.Button(frm, text="5: Delete an existing database",command= inputbox).grid(column=0, row=6)
