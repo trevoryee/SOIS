@@ -10,9 +10,6 @@ from venv import create
 
 con = sqlite3.connect("maindb")
 cursor= con.cursor()
-root = Tk()
-frm = ttk.Frame(root, padx=10,pady=10)
-frm.grid()
 
 def create_table():
     try:
@@ -173,12 +170,12 @@ def fetch_rowids_gui():
         sqliteConnection = sqlite3.connect('maindb')
         print("Connected to SQLite")
         print(list_table())
-        activedb= input("Please type your active table: ")
-        x= activedb.casefold()
-        select_query = "SELECT * from " + x
+        inputbox()
+        printInput()
+        select_query = "SELECT * from " + inputtxt
         cursor.execute(select_query)
         records = cursor.fetchall()
-        z= cursor.execute("SELECT ROW_NUMBER() OVER(ORDER BY mfr)RowNum,mfr,model,sn FROM "+x)
+        z= cursor.execute("SELECT ROW_NUMBER() OVER(ORDER BY mfr)RowNum,mfr,model,sn FROM "+inputtxt)
         print("Total rows are:  ", len(records))
         print("Printing each row")
         a=""
@@ -192,8 +189,11 @@ def fetch_rowids_gui():
         if sqliteConnection:
             sqliteConnection.close()
             print("The SQLite connection is closed")
-    
+
     textbox= ttk.Tk()
+    frm = ttk.Frame(textbox, padx=10,pady=10)
+    frm.grid()
     textbox.title("RowID")
     textbox.geometry('400x300')
     ttk.Label(frm, text= a).grid(column=0,row=1)
+    ttk.Button(frm, text="Quit", command=frm.destroy).grid(column=0, row=8)
