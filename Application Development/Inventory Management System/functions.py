@@ -20,8 +20,9 @@ def create_table_custom():
         con= sqlite3.connect('maindb')
         tablename= input("Table name: ")
         cursor.execute("CREATE TABLE " + tablename + "(mfr,model,sn)")
+        print("Table created successfully.")
     except Error as e:
-        print("Table with name",tablename,"exists")
+        print("Could not create table",tablename)
 
 def list_table():
     result= cursor.execute("SELECT name FROM sqlite_master")
@@ -35,7 +36,7 @@ def inputs():
     activetable= input('What table are you using? ')
     mfr =  input("Please input the manufacturer: ")
     model= input("Please input the model: ")
-    sn= input("Please input the serial number of the itme: ")
+    sn= input("Please input the serial number of the item: ")
     print('Manufacturer: ', mfr,'Model: ', model,'Serial Number: ', sn)
 
 def insert_db():
@@ -75,13 +76,14 @@ def fetch_rowids():
 
 def delete_info_input():
     global delete_input
-    item_id= input("ID: ")
+    item_id= input("Delete ID: ")
     delete_input= str(item_id)
     
 
 def delete_info():
     sqliteConnection = sqlite3.connect('maindb')
-    cursor.execute("""DELETE FROM weapons WHERE rowid=?""",(delete_input))
+    activetable= input('Confirm the table are you using: ')
+    cursor.execute("DELETE FROM " + activetable + " WHERE rowid=?",(delete_input))
     con.commit()
 
 def deletetable():
@@ -90,6 +92,7 @@ def deletetable():
         tablename= input("What is the table you want to delete? ")
         x= tablename.casefold()
         cursor.execute("DROP TABLE " + x)
+        print("Table ",x," deleted")
     except Error:
         print(x+ ' does not exist')
 

@@ -47,17 +47,16 @@ if prompt == '2':
     con.close()
 
 if prompt == '3':
-    fetch_rowids()
-    delete_info_input()
-    infoconfirm= input("Are you sure? (Y/N inputs only): ")
-    while infoconfirm.casefold() == 'n':
+    try: 
+        con= sqlite3.connect("maindb")
+        cursor= con.cursor()
+        fetch_rowids()
+        delete_info_input()
         delete_info()
-        infoconfirm= input("Are you sure? (Y/N inputs only): ")
-    
-        if infoconfirm.casefold() == 'y':
-            delete_info()
-    fetch_rowids()
-    con.close()
+        closecon()
+        print("Delete success.")
+    except Error as E:
+        print("An error occurred")
 
 if prompt == '4':
     create_table_custom()
